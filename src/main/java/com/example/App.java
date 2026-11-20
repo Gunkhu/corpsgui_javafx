@@ -1,3 +1,12 @@
+/*
+* File: App.java
+* Author: Csorba Péter
+* Copyright: 2026, Csorba Péter
+* Group: Szoft II/N
+* Date: 2026-11-20
+* Github: https://github.com/Gunkhu
+* Licenc: MIT
+*/
 package com.example;
 
 import javafx.application.Application;
@@ -22,7 +31,15 @@ public class App extends Application {
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+
+    static void setRoot(String fxml){
+        try {
+            trySetRoot(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private static void trySetRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
